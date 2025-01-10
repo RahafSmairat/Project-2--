@@ -1,56 +1,70 @@
-document.getElementById("showw").onclick=(event)=>{
-
-    event.preventDefault()
-    let pass = document.getElementById("password").value
-
-    let us = document.getElementById("username").value
-    var name = localStorage.getItem("email")
-    if(pass == user && us == name){
-        document.getElementById("show").innerHTML="success Login"
-    }else{
-        document.getElementById("show").innerHTML="Wrong password or username "
-    }
-
-    if(pass === "" && us===""){
-        document.getElementById("show").innerHTML=" "
-    }
-
-    document.getElementById("username").addEventListener('click',()=>{
-        document.getElementById("show").innerHTML=""
-    })
-
-    document.getElementById("password").addEventListener('click',()=>{
-        document.getElementById("show").innerHTML=""
-    })
+if (!localStorage.getItem("users")) {
+    localStorage.setItem("users", JSON.stringify(users));
 }
-document.getElementById("username").addEventListener('input', (event) => {
+document.getElementById("showw").onclick = (event) => {
     event.preventDefault();
 
-    let validusername =!/^[^\s@]+@[^\s@]+.[^\s@]+$/;
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
 
-    let phone = /^\d{10}$/
-    let us = document.getElementById("username").value.trim(); 
+    // جلب قائمة المستخدمين من localStorage
+    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (us === "") {
-        document.getElementById("user").innerHTML = ""; 
-    } else if (!validusername.test(us) ||phone.test(us) ) {
-        document.getElementById("user").innerHTML = "Incorrect Email Or Phone format"; 
+    // البحث عن تطابق بين المدخلات وأحد المستخدمين
+    const user = storedUsers.find(
+        (u) => (u.email === username || u.phone === username) && u.password === password
+    );
+
+    if (user) {
+        document.getElementById("show").innerHTML = "Success Login";
+        document.getElementById("show").style.color = "green";
+    } else {
+        document.getElementById("show").innerHTML = "Wrong password or username";
+        document.getElementById("show").style.color = "red";
+    }
+
+    if (password === "" && username === "") {
+        document.getElementById("show").innerHTML = " ";
+    }
+
+    // إعادة تعيين الرسالة عند النقر على الحقول
+    document.getElementById("username").addEventListener("click", () => {
+        document.getElementById("show").innerHTML = "";
+    });
+
+    document.getElementById("password").addEventListener("click", () => {
+        document.getElementById("show").innerHTML = "";
+    });
+};
+
+// التحقق من صيغة اسم المستخدم (البريد أو الهاتف)
+document.getElementById("username").addEventListener("input", (event) => {
+    event.preventDefault();
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneRegex = /^\d{10}$/;
+    let username = document.getElementById("username").value.trim();
+
+    if (username === "") {
+        document.getElementById("user").innerHTML = "";
+    } else if (!emailRegex.test(username) && !phoneRegex.test(username)) {
+        document.getElementById("user").innerHTML = "Incorrect Email or Phone format";
     } else {
         document.getElementById("user").innerHTML = "";
     }
 });
 
-document.getElementById("password").addEventListener('input', (event) => {
+// التحقق من صيغة كلمة المرور
+document.getElementById("password").addEventListener("input", (event) => {
     event.preventDefault();
 
-    let validusername = /^[a-zA-Z0-9._()@]+$/;
+    let passwordRegex = /^[a-zA-Z0-9._()@]+$/;
+    let password = document.getElementById("password").value.trim();
 
-    let us = document.getElementById("password").value.trim(); 
-
-    if (us === "") {
-        document.getElementById("passs").innerHTML = ""; 
-    } else if (!validusername.test(us)) {
-        document.getElementById("passs").innerHTML = "Incorrect password format"; 
+    if (password === "") {
+        document.getElementById("passs").innerHTML = "";
+    } else if (!passwordRegex.test(password)) {
+        document.getElementById("passs").innerHTML = "Incorrect password format";
     } else {
         document.getElementById("passs").innerHTML = "";
     }

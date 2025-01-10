@@ -248,7 +248,7 @@
             </div>
             <div class="field">
                 <h1>Sign-in</h1>
-                <form action="/login" method="POST">
+                <form action="/login" id="loginForm" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label><br>
                         <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -259,10 +259,10 @@
                         <input type="password" id="password" name="password" placeholder="Enter your password" required>
                     </div>
                     <p id="passs" style="color: red;"></p>
-                    <p id="show"></p>
                     <div class="bt">
                         <button type="submit" class="login-button" id="showw">Login</button>
                     </div>
+                    <p id="show" style="color: red;"></p>
                 </form>
                 <p class="sign-up">already Have account <a href="" style="color: rgb(0, 0, 255);">Sign-up</a> </p>
             </div>
