@@ -1,6 +1,8 @@
 if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users));
 }
+
+// حدث تسجيل الدخول
 document.getElementById("showw").onclick = (event) => {
     event.preventDefault();
 
