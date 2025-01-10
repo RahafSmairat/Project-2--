@@ -1,3 +1,23 @@
+
+ function showAlert(message) {
+    const alertBox = document.getElementById("custom-alert");
+    const alertText = document.getElementById("alert-text");
+  
+  
+    alertText.textContent = message;
+  
+    
+    alertBox.classList.remove("hidden");
+    alertBox.classList.add("show");
+  }
+  
+  function closeAlert() {
+    const alertBox = document.getElementById("custom-alert");
+  
+    alertBox.classList.remove("show");
+    alertBox.classList.add("hidden");
+  }
+
  // Name validation
  document.getElementById('name').addEventListener('input', function () {
     const name = this.value;
@@ -74,7 +94,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     // Validate fields again before submission
     if (document.querySelectorAll('span:empty').length !== 5) {
-        alert('Please correct the errors before submitting the form.');
+       
         return;
     }
 
@@ -84,8 +104,10 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     // Check if the user already exists based on email
     const existingUser = users.find(user => user.email === email);
     if (existingUser) {
-        alert('An account with this email already exists. Redirecting to login page.');
-        window.location.href = 'login.html'; // Redirect to login page
+       // alert('An account with this email already exists. Redirecting to login page.');
+        const mess="An account with this email already exists. Redirecting to login page.";
+        showAlert(mess)
+        //window.location.href = 'login.html'; // Redirect to login page
         return;
     }
 
@@ -109,7 +131,9 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     // Save the updated array back to Local Storage
     localStorage.setItem('users', JSON.stringify(users));
-    alert('Registration successful! Data has been saved in Local Storage.');
+    //alert('Registration successful! Data has been saved in Local Storage.');
+    const mess="Registration successful!";
+    showAlert(mess)
 
     // Optionally clear the form
     document.getElementById('registrationForm').reset();
