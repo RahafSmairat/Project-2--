@@ -1,10 +1,8 @@
-
-function showContent() {
-  document.getElementById("cardBody").innerHTML =
-    '<p class="card-text">Responsive, user-friendly websites built with the latest technologies.</p>';
-}
-
-function hideContent() {
-    document.getElementById("cardBody").innerHTML =
-      '<h5 class="card-title">Custom Web Development</h5>';
+document.addEventListener('scroll', function () {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+  } else {
+      navbar.classList.remove('scrolled');
   }
+});

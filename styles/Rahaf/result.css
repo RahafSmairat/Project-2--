@@ -29,9 +29,11 @@ body {
 
 .pass {
     color: #00897B;
+    font-weight: bold;
 }
 
 .fail {
+    font-weight: bold;
     color: #E53935;
 }
 
@@ -61,5 +63,7 @@ body {
     #result{
         width: 80%;
         padding: 5%;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
 }

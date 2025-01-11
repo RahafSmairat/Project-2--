@@ -1,6 +1,7 @@
-localStorage.setItem('score', 4);
+localStorage.setItem('score', 9);
 
 const score = localStorage.getItem('score');
+
 const successStyle = document.createElement('style');
 const failStyle = document.createElement('style');
 failStyle.innerHTML = `body::before {
@@ -26,7 +27,7 @@ successStyle.innerHTML = `body::after {
     top: 0;
     z-index: 1;
     opacity: 1;
-    background-image: url('/images/Rahaf/congragulations.gif');
+    background-image: url('/images/Rahaf/cong.gif');
     background-size: contain;
     background-position: center;
 }`

@@ -213,6 +213,10 @@ p {
 
 @media screen and (max-width: 426px) {
 
+    #aboutUsHeader {
+        background-image: linear-gradient(#081334e1, #4683b463), url("/images/Rahaf/aboutUsSmCoverImg.jpg") !important;
+    }
+
     .aboutCompany,
     .whoWeAre {
         flex-direction: column;
