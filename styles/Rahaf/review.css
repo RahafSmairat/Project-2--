@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/Rahaf/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.3; 
+    z-index: -1; 
+  }
+
+h2 {
+    color: #27408B !important;
+    font-family: "Montserrat", serif;
+    margin-top: 5% !important;
+    justify-self: center;
+    font-weight: bold !important;
+}
+
+.correctAnswer {
+    color: #00897B;
+    font-weight: bold;
+}
+
+.wrongAnswer {
+    color: #E53935;
+    font-weight: bold;
+}
+
+ol {
+    list-style-type: lower-alpha;
+}
+
+#reviewContainer {
+    background-color: white;
+    font-family: "Open Sans", serif;
+    justify-self: center;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    width: 70%;
+    padding: 40px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0 0 15px #122251;
+
+}
+
+.question {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.option {
+    line-height: 50px;
+}
+
+#reviewBackBtn{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #27408B;
+    color: white;
+    font-family: "Open Sans", serif;
+    border: none;
+    box-shadow: 0 0 3px #27408B;
+}
+
+#reviewBackBtn:hover {
+    background-color:#4682B4;
+}
+
+.btnLink{
+    display: block;
+    justify-self: center;
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 426px) {
+    #reviewContainer {
+        padding: 20px;
+        width: 90%;
+
+    }
+
+    li {
+        font-size: .9rem;
+    }
+}

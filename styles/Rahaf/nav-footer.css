@@ -1,0 +1,75 @@
+#aboutUsHeader {
+    background-image: linear-gradient(#081334e1, #4683b463), url('/images/Rahaf/about\ us\ cover.jpg');
+    height: 50vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#navbarSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #152453;
+    z-index: 1000;
+}
+
+.navbar {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
+.navbar-nav{
+    width: 40% !important;
+    gap: 50px !important;
+}
+
+.nav-link {
+    color: white !important;
+    font-family: "Montserrat", serif;
+}
+
+.nav-link:hover{
+    color: #4682B4 !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-family: "Montserrat", serif;
+}
+/*-------------*/
+
+.footerContainer {
+    /* margin-top: 10%; */
+    /* background-color: #E0E0E0 !important; */
+    background-image: linear-gradient(#081334e1, #4683b463), url('/images/Rahaf/footerImg.jpg');
+    padding: 0 !important;
+    z-index: 1000;
+}
+
+.copyRight {
+    /* background-color: #4A4A4A !important; */
+    color: white !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 1%;
+    font-size: 0.8rem !important;
+    font-family: "Open Sans", serif !important;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@media screen and (max-width: 426px) {
+    .navbar-nav{
+        margin-top: 10px;
+        width: 100% !important;
+        gap: 10px !important;
+    }    
+}
