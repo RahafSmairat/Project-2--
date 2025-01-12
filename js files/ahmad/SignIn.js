@@ -19,10 +19,20 @@
   }
 
  // Name validation
- document.getElementById('name').addEventListener('input', function () {
-    const name = this.value;
-    const error = document.getElementById('nameError');
-    if (/[^a-zA-Z\s]/.test(name)) {
+ document.getElementById('Fname').addEventListener('input', function () {
+    const Fname = this.value;
+    const error = document.getElementById('FnameError');
+    if (/[^a-zA-Z\s]/.test(Fname)) {
+        error.textContent = "Only letters and spaces are allowed";
+    } else {
+        error.textContent = "";
+    }
+});
+
+document.getElementById('Lname').addEventListener('input', function () {
+    const Lname = this.value;
+    const error = document.getElementById('LnameError');
+    if (/[^a-zA-Z\s]/.test(Lname)) {
         error.textContent = "Only letters and spaces are allowed";
     } else {
         error.textContent = "";
@@ -87,13 +97,14 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     event.preventDefault(); // Prevent form submission
 
     // Get form values
-    const name = document.getElementById('name').value;
+    const Fname = document.getElementById('Fname').value;
+    const Lname = document.getElementById('Lname').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const password = document.getElementById('password').value;
 
     // Validate fields again before submission
-    if (document.querySelectorAll('span:empty').length !== 5) {
+    if (document.querySelectorAll('span:empty').length !== 6) {
        
         return;
     }
@@ -117,11 +128,12 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     // Create a JSON object for the user
     const userData = {
         id: userId,
-        name: name,
+        Fname: Fname,
+        Lname:Lname,
         email: email,
         phone: phone,
         password: password, // Note: Passwords should ideally be hashed before storage
-        img:File,
+        img:"",
         hasTakenExam: false // Default value indicating the user has not taken the exam
     };
 
