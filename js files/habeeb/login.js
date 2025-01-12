@@ -18,8 +18,13 @@ document.getElementById("showw").onclick = (event) => {
     );
 
     if (user) {
-        document.getElementById("show").innerHTML = "Success Login";
-        document.getElementById("show").style.color = "green";
+        // document.getElementById("show").innerHTML = "Success Login";
+        // document.getElementById("show").style.color = "green";
+        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+        alert('Login successful!');
+        window.location.href = '../../pages/habeeb/home.html'; // التوجيه إلى الصفحة الرئيسية
+
+       
     } else {
         document.getElementById("show").innerHTML = "Wrong password or username";
         document.getElementById("show").style.color = "red";

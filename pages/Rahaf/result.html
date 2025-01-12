@@ -44,9 +44,9 @@
     <div id="result">
         <div id="scoreResult"></div>
         <div id="resultMessage"></div>
-        <div class="buttonsContainer">
+        <div class="buttonsContainer" id="buttonsContainer">
             <a href="#"><button id="backToQuizzes">Back To Quizzes</button></a>
-            <a href="#"><button id="reveiwAnswers">Review Answers</button></a>           
+            <a href="#"><button id="reveiwAnswers" onclick="getFile()">Review Answers</button></a>
         </div>
     </div>
 
@@ -70,6 +70,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </body>
 
 </html>

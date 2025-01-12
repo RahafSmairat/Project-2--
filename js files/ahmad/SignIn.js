@@ -16,7 +16,11 @@
   
     alertBox.classList.remove("show");
     alertBox.classList.add("hidden");
+<<<<<<< HEAD
     window.location.href = '../../pages/habeeb/login.html'; // Redirect to login page
+=======
+    window.location.href='../../pages/habeeb/login.html';
+>>>>>>> 9c3007fec4f8b9ae62951944cb245a7c48405f55
   }
 
  // Name validation
@@ -111,7 +115,12 @@ document.getElementById('confirmPassword').addEventListener('input', function ()
 
 
     // Validate fields again before submission
+<<<<<<< HEAD
     // if (document.querySelectorAll('span:empty').length !== 5) {
+=======
+    // if (document.querySelectorAll('span:empty').length !== 6) {
+       
+>>>>>>> 9c3007fec4f8b9ae62951944cb245a7c48405f55
     //     return;
     // }
 
@@ -153,7 +162,7 @@ document.getElementById('confirmPassword').addEventListener('input', function ()
     const mess="Registration successful!";
     showAlert(mess)
 
-    // Optionally clear the form
+    // Optionally clear the formF
     document.getElementById('registrationForm').reset();
 // });
 }
