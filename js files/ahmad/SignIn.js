@@ -147,6 +147,6 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     const mess="Registration successful!";
     showAlert(mess)
 
-    // Optionally clear the form
+    // Optionally clear the formF
     document.getElementById('registrationForm').reset();
 });
