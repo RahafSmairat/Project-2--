@@ -16,6 +16,7 @@
   
     alertBox.classList.remove("show");
     alertBox.classList.add("hidden");
+    window.location.href = '../../pages/habeeb/login.html'; // Redirect to login page
   }
 
  // Name validation
@@ -93,9 +94,12 @@ document.getElementById('confirmPassword').addEventListener('input', function ()
 });
 
 // Form submission
-document.getElementById('registrationForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+// document.getElementById('registrationForm').addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent form submission
 
+    function data(event)
+    {
+        event.preventDefault();
     // Get form values
     const Fname = document.getElementById('Fname').value;
     const Lname = document.getElementById('Lname').value;
@@ -103,11 +107,13 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     const phone = document.getElementById('phone').value;
     const password = document.getElementById('password').value;
 
+    
+
+
     // Validate fields again before submission
-    if (document.querySelectorAll('span:empty').length !== 6) {
-       
-        return;
-    }
+    // if (document.querySelectorAll('span:empty').length !== 5) {
+    //     return;
+    // }
 
     // Retrieve existing users from Local Storage or initialize an empty array
     const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -118,7 +124,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
        // alert('An account with this email already exists. Redirecting to login page.');
         const mess="An account with this email already exists. Redirecting to login page.";
         showAlert(mess)
-        //window.location.href = 'login.html'; // Redirect to login page
+        
         return;
     }
 
@@ -133,7 +139,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         email: email,
         phone: phone,
         password: password, // Note: Passwords should ideally be hashed before storage
-        img:"",
+        img:File,
         hasTakenExam: false // Default value indicating the user has not taken the exam
     };
 
@@ -149,4 +155,5 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     // Optionally clear the form
     document.getElementById('registrationForm').reset();
-});
+// });
+}
