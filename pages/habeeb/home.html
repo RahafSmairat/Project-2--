@@ -14,14 +14,22 @@
         <div class="logo">
             <img src="../../images/Rahaf/logo.png" width="120" height="50" alt="Logo">
         </div>
-        <ul id="ulfor">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><button class="button"><a href="">Login</a></button></li>
-            <li><button class="button"><a href="">Sign Up</a></button></li>
+        <ul id="ulfor" style="display: flex; align-items: center; justify-content: space-between; list-style-type: none; padding: 0;">
+            <li><a href="../../pages\habeeb\home.html">Home</a></li>
+            <li><a href="../../pages\Rahaf\about.html">About us</a></li>
+            <li><a href="../../pages\Rudaina\contact.html">Contact us</a></li>
+            <li ><a href="../../pages\habeeb\login.html" id="loginLogoutLink">Login</a></li>
+            <li ><a href="../../pages\ahmad\SignIn.html" id="sign-up-link">Sign Up</a></li>
+        
+            <!-- صورة البروفايل -->
+            <li style="display: inline-block; margin-left: 10px; visibility: hidden; " id="profile-icon" >
+                <a href="../../pages\Rudaina\profile.html" style="display: inline-block; width: 40px; height: 40px; overflow: hidden; border-radius: 50%;">
+                    <img id="profile-image" src="../../images/Rudaina/avatar.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </a>
+            </li>
         </ul>
+        
+      
         <img src="../../images/Habeeb/menu_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.png" width="30" height="30" alt="" id="img123">
     </nav>
     <div class="hero">
@@ -236,14 +244,87 @@
             <img src="../../images/Rahaf/logo.png" width="300" height="300" alt="Logo" class="logoo">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="../../pages\Rahaf\about.html">About</a></li>
+               
+                <li><a href="../../pages\Rudaina\contact.html">Contact</a></li>
             </ul>
         </div>
         <hr style="width: 100%;"><br>
         <p class="text-center" style="text-align: center;">© 2025 Company, Inc</p>
     </footer>
+    <script>
+     
+       
+    function updateLoginStatus() {
+    const loggedInUser = sessionStorage.getItem('loggedIn-status'); 
+    const loginLogoutLink = document.getElementById('login-logout');
+    const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
+    const profileImageElement = document.getElementById('profile-image');
+
+    if (loggedInUser) {
+        
+        const profile_icon = document.getElementById("profile-icon");
+        if (profile_icon) {
+            profile_icon.style.visibility = "visible"; 
+        }
+        let sign_up_link=document.getElementById("sign-up-link");
+        sign_up_link.style.visibility="hidden";
+
+        let loginLogoutLink=document.getElementById("loginLogoutLink");
+
+        loginLogoutLink.textContent = 'Logout';
+        
+        const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
+
+    const profileImageElement = document.getElementById('profile-image');
+
+    
+    if (user.profileImage) {
+        profileImageElement.src = user.profileImage; 
+    } else {
+       
+        profileImageElement.src = '../../images/Rudaina/avatar.jpg';
+    }
+        
+
+
+
+
+    // 
+
+        loginLogoutLink.onclick = function () {
+            sessionStorage.removeItem('loggedIn-status'); 
+            alert('Logged out successfully!');
+            updateLoginStatus(); 
+           
+        };
+    } else {
+        
+        const profile_icon = document.getElementById("profile-icon");
+        if (profile_icon) {
+            profile_icon.style.visibility = "hidden"; 
+        }
+let loginLogoutLink=document.getElementById("loginLogoutLink");
+        loginLogoutLink.textContent = 'Login';
+        loginLogoutLink.onclick = function () {
+            window.location.href = 'login.html'; 
+        };
+    }
+}
+
+
+window.onload = updateLoginStatus;
+ 
+    
+
+
+
+
+
+
+      
+
+    </script>
     <script src="../../js files/habeeb/home.js"></script>
 </body>
 </html>

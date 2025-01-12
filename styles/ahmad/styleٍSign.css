@@ -121,7 +121,7 @@ form input {
     padding: 10px;
     width: 93%;
     border: 1px solid #005A8D; /* Main color */
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #FFFFFF;
     color: #333333; /* Font color */
     text-align: center;

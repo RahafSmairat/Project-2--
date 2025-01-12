@@ -7,10 +7,14 @@ document.getElementById("showw").onclick = (event) => {
     event.preventDefault();
 
     let username = document.getElementById("username").value.trim();
+
+
+    
     let password = document.getElementById("password").value.trim();
 
     // جلب قائمة المستخدمين من localStorage
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    console.log(storedUsers);
 
     // البحث عن تطابق بين المدخلات وأحد المستخدمين
     const user = storedUsers.find(
@@ -22,7 +26,9 @@ document.getElementById("showw").onclick = (event) => {
         // document.getElementById("show").style.color = "green";
         sessionStorage.setItem('loggedInUser', JSON.stringify(user));
         alert('Login successful!');
+        sessionStorage.setItem('loggedIn-status', 'true');
         window.location.href = '../../pages/habeeb/home.html'; // التوجيه إلى الصفحة الرئيسية
+
 
        
     } else {

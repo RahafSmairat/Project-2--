@@ -62,19 +62,24 @@
 }
 /*-------------*/
 
+
 .footerContainer {
-    
-    background-image: linear-gradient(#081334e1, #4683b463), url('../../images/Rudaina/footerImg.jpg');
+    background-image: linear-gradient(#081334e1, #4683b463), url('/images/Rahaf/footerImg.jpg');
     padding: 0 !important;
     z-index: 1000;
 }
-.footerContainer .footer .border-bottom .nav-item a{
+.footer-links .nav-link {
     color: white !important;
-    font-family: "Montserrat", serif;
+    
+}
+.footer-links .nav-link:hover{
+    color:#4682B4 !important;
+    
 }
 
+
+
 .copyRight {
-  
     color: white !important;
     margin-bottom: 0 !important;
     padding-bottom: 1%;
@@ -91,10 +96,68 @@
     box-shadow: none !important;
 }
 
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer-brand img {
+    width: 40%;
+}
+
+.footer-links .nav-link {
+    margin-left: 50px;
+}
+
 @media screen and (max-width: 426px) {
+    .navbar-nav {
+        margin-top: 10px;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    #navbar {
+        background-color: #152453;
+    }
+
+    .navbar-brand {
+        width: 40%;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-links .nav-link {
+        margin: 20px 0 0 0;
+    }
+    
+}
+/* @media screen and (max-width: 426px) {
     .navbar-nav{
         margin-top: 10px;
         width: 100% !important;
         gap: 10px !important;
     }    
-}
+} */

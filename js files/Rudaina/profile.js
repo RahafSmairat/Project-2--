@@ -2,16 +2,16 @@ const users = JSON.parse(localStorage.getItem('users')) || [];
 const user = JSON.parse(sessionStorage.getItem('loggedInUser'));
 
 if (user) {
-    let firstName = document.getElementById("first-name");
-    let lastName = document.getElementById("last-name");
+    let Fname = document.getElementById("first-name");
+    let Lname = document.getElementById("last-name");
     let email = document.getElementById("email");
     let current_password = document.getElementById("current-password");
     let profileImg = document.getElementById("profile-img");
 
     for (const key in user) {
         if (user.hasOwnProperty(key)) {
-            if (key === 'firstName') firstName.value = user[key];
-            else if (key === 'lastName') lastName.value = user[key];
+            if (key === 'Fname') Fname.value = user[key];
+            else if (key === 'Lname') Lname.value = user[key];
             else if (key === 'email') email.value = user[key];
             else if (key === 'password') current_password.value = user[key];
             else if (key === 'profileImage' && user[key]) profileImg.src = user[key];
@@ -81,7 +81,7 @@ function saveChanges() {
     displayMessage('Changes saved successfully!', 'success');
     
 }
-// Logout function
+
 function logOut() {
   
     sessionStorage.removeItem('loggedInUser');
@@ -90,7 +90,7 @@ function logOut() {
     displayMessage('Logged out successfully!', 'success');
     
   
-    window.location.href = '../../pages/habeeb/home.html'; 
+    window.location.href = '../../pages\habeeb\login.html'; 
 }
 
 
@@ -104,11 +104,11 @@ function previewImage(event) {
         const output = document.getElementById('profile-img');  
         output.src = reader.result;  
 
-        // Save the updated profile image in sessionStorage
+        
         user.profileImage = reader.result;
         sessionStorage.setItem('loggedInUser', JSON.stringify(user));  
 
-        // Save the updated image in localStorage
+       
         const userIndex = users.findIndex(u => u.email === user.email);  
         if (userIndex !== -1) {
             users[userIndex].profileImage = reader.result;  

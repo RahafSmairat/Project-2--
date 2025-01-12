@@ -16,7 +16,11 @@
   
     alertBox.classList.remove("show");
     alertBox.classList.add("hidden");
+<<<<<<< HEAD
+    window.location.href = '../../pages/habeeb/login.html'; // Redirect to login page
+=======
     window.location.href='../../pages/habeeb/login.html';
+>>>>>>> 9c3007fec4f8b9ae62951944cb245a7c48405f55
   }
 
  // Name validation
@@ -94,9 +98,12 @@ document.getElementById('confirmPassword').addEventListener('input', function ()
 });
 
 // Form submission
-document.getElementById('registrationForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+// document.getElementById('registrationForm').addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent form submission
 
+    function data(event)
+    {
+        event.preventDefault();
     // Get form values
     const Fname = document.getElementById('Fname').value;
     const Lname = document.getElementById('Lname').value;
@@ -104,9 +111,16 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     const phone = document.getElementById('phone').value;
     const password = document.getElementById('password').value;
 
+    
+
+
     // Validate fields again before submission
+<<<<<<< HEAD
+    // if (document.querySelectorAll('span:empty').length !== 5) {
+=======
     // if (document.querySelectorAll('span:empty').length !== 6) {
        
+>>>>>>> 9c3007fec4f8b9ae62951944cb245a7c48405f55
     //     return;
     // }
 
@@ -119,7 +133,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
        // alert('An account with this email already exists. Redirecting to login page.');
         const mess="An account with this email already exists. Redirecting to login page.";
         showAlert(mess)
-        //window.location.href = 'login.html'; // Redirect to login page
+        
         return;
     }
 
@@ -134,7 +148,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         email: email,
         phone: phone,
         password: password, // Note: Passwords should ideally be hashed before storage
-        img:"",
+        img:File,
         hasTakenExam: false // Default value indicating the user has not taken the exam
     };
 
@@ -150,4 +164,5 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     // Optionally clear the formF
     document.getElementById('registrationForm').reset();
-});
+// });
+}
