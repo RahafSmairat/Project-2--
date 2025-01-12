@@ -16,6 +16,7 @@
   
     alertBox.classList.remove("show");
     alertBox.classList.add("hidden");
+    window.location.href='../../pages/habeeb/login.html';
   }
 
  // Name validation
@@ -104,10 +105,10 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     const password = document.getElementById('password').value;
 
     // Validate fields again before submission
-    if (document.querySelectorAll('span:empty').length !== 6) {
+    // if (document.querySelectorAll('span:empty').length !== 6) {
        
-        return;
-    }
+    //     return;
+    // }
 
     // Retrieve existing users from Local Storage or initialize an empty array
     const users = JSON.parse(localStorage.getItem('users')) || [];
