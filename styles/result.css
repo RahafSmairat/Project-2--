@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+    height: 100vh;
+    font-family: "Open Sans", serif;
+}
+#result {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    font-family: "Open Sans", serif;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5%;
+    margin: 5%;
+    border: none;
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 0 15px #122251;
+    align-self: center;
+}
+
+.pass {
+    color: #00897B;
+    font-weight: bold;
+}
+
+.fail {
+    font-weight: bold;
+    color: #E53935;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#reveiwAnswers, #backToQuizzes, #downloadResult {
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #27408B;
+    color: white;
+    font-family: "Open Sans", serif;
+    border: none;
+    box-shadow: 0 0 3px #27408B;
+}
+
+#reveiwAnswers:hover, #backToQuizzes:hover, #downloadResult:hover {
+    background-color:#4682B4;
+}
+
+.pdfResult{
+    text-align: center;
+    font-family: "Open Sans", serif;
+    font-weight: bold;
+    width: 100%;
+    height: 794px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #091538;
+    margin: 0;
+    padding: 50px;
+    padding-top: 180px;
+}
+
+.pdfResult h1, .pdfResult h3{
+    color: #79b4e4;
+    font-weight: bolder !important;
+}
+
+.pdfResult p{
+    color: white;
+}
+
+.pdfResult img{
+    width: 40%;
+    padding-right: 50px;
+}
+
+#pdfContent {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+@media screen and (max-width: 426px) {
+    #result{
+        width: 80%;
+        padding: 10%;
+        gap: 20px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .buttonsContainer{
+        gap: 20px;
+    }
+}

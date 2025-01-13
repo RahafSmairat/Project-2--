@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards</title>
+  <link rel="stylesheet" href="/styles/CardsTest.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/dark.css">
+  <link rel="stylesheet" href="/styles/nav-footer.css">
+
+</head>
+
+<body>
+
+  <section>
+    <nav class="navbar navbar-expand-lg" style="background-color: #182E55; height:1%;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="/images/logo.png"></a>
+        <!-- <a class="navbar-brand" href="#">logo</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav" style="width: 50% !important; gap: 35px !important">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/pages/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="logout()">Log Out</a>
+            </li>
+            <!--Profile Image-->
+            <li style="display: inline-block; margin-left: 10px; visibility: hidden; " id="profile-icon">
+              <a href="/pages\profile.html"
+                style="margin-top: 25%;display: inline-block; width: 40px; height: 40px; overflow: hidden; border-radius: 50%;">
+                <img id="profile-image" src="/images/avatar.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover;">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <div class="welcome-message">
+    <p>"Welcome! This assessment is your first step toward joining our team.
+      Showcase your skills and prove you're the perfect fit for the position, good luck!"
+    </p>
+  </div>
+
+  <div class="cards-container">
+    <div class="card">
+      <h2>IQ Test</h2>
+      <p>IQ Assessment – 10 questions.</p>
+      <div>
+        <button id="showIQ" class="hidden" onclick="h('IQ')">Show result</button>
+        <button id="testIQ" onclick="showAlert('IQ')">Test</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>English Test</h2>
+      <p style="font-size: 15.1px;">English Proficiency Test – 10 questions.</p>
+      <div>
+        <button id="showEnglish" class="hidden" onclick="h('English')">Show result</button>
+        <button id="testEnglish" onclick="showAlert('English')">Test</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Technical Test</h2>
+      <p>Technical Skills Test – 10 questions</p>
+      <div>
+        <button id="showTechnical" class="hidden" onclick="h('Technical')">Show result</button>
+        <button id="testTech" onclick="showAlert('Technical')">Test</button>
+      </div>
+    </div>
+  </div>
+  <div id="custom-alert" class="hidden">
+    <p style="background-color: #182E55; color: white; text-align: center;" id="alert-text"></p>
+    <p id="alert-text">
+      - You must pass all three quizzes to proceed.<br>
+      - Each question is timed.<br>
+      - Once you answer a question, you cannot go back to change it.<br><br>
+      Tips:<br>
+      ✓ Stay focused.<br>
+      ✓ Answer carefully.<br>
+      ✓ Good luck!
+    </p>
+    <button onclick="closeAlert()">Close</button>
+    <button onclick="getFile()">Start Exam</button>
+  </div>
+  <div class="container-fluid footerContainer">
+    <footer class="pt-5 my-0">
+      <div class="footer-links">
+        <a class="footer-brand" href="#"><img src="/images/logo.png"></a>
+        <ul class="nav justify-content-center pb-3 mb-3 ">
+          <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">About Us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <p class="text-center copyRight border-top pt-3">© 2025 Company, Inc</p>
+    </footer>
+  </div>
+  <button id="themeToggle" class="theme-toggle">Dark Theme</button>
+  <script src="/js files/dark.js"></script>
+
+  <script src="/js files/CardsTest.js"></script>
+  <script src="/js files/logout.js"></script>
+  <script>
+
+
+    function updateLoginStatus() {
+      sessionStorage.setItem('currentQuiz', "")
+
+      const loggedInUser = sessionStorage.getItem('loggedIn-status');
+      const loginLogoutLink = document.getElementById('login-logout');
+      const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
+      const profileImageElement = document.getElementById('profile-image');
+
+      if (loggedInUser) {
+
+        const profile_icon = document.getElementById("profile-icon");
+        if (profile_icon) {
+          profile_icon.style.visibility = "visible";
+        }
+        // let sign_up_link=document.getElementById("sign-up-link");
+        // sign_up_link.style.visibility="hidden";
+
+        // let loginLogoutLink=document.getElementById("loginLogoutLink");
+
+        // loginLogoutLink.textContent = 'Logout';
+
+        const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
+
+        const profileImageElement = document.getElementById('profile-image');
+
+
+        if (user.profileImage) {
+          console.log("hello")
+          profileImageElement.src = user.profileImage;
+        } else {
+
+          profileImageElement.src = '/images/avatar.jpg';
+        }
+        // 
+
+        // loginLogoutLink.onclick = function () {
+        //     sessionStorage.removeItem('loggedIn-status'); 
+        //     // alert('Logged out successfully!');
+        //     updateLoginStatus(); 
+
+        // };
+      } else {
+
+        const profile_icon = document.getElementById("profile-icon");
+        if (profile_icon) {
+          profile_icon.style.visibility = "hidden";
+        }
+        let loginLogoutLink = document.getElementById("loginLogoutLink");
+        loginLogoutLink.textContent = 'Login';
+        loginLogoutLink.onclick = function () {
+          window.location.href = 'login.html';
+        };
+      }
+    }
+
+
+    window.onload = updateLoginStatus;
+  </script>
+
+</body>
+
+</html>

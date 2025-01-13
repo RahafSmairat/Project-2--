@@ -42,12 +42,12 @@ body.dark-theme .flip-card{
 }
 
 body.dark-theme #result{
-    background-color: #1e1e1e;
+    background-color: #2a2b2e;
 }
 
-body.dark-theme .buttonsContainer{
+/* body.dark-theme .buttonsContainer{
     background-color: #1e1e1e;
-}
+} */
 
 body.dark-theme .quiz-app{
     background-color:#444444;
@@ -81,5 +81,23 @@ body.dark-theme .quiz-app{
 }
 
 body.dark-theme #reviewContainer{
-    background-color: rgb(62, 62, 62) ;
+    background-color:#2a2b2e ;
+}
+
+body.dark-theme .wrongAnswer{
+    background-color: #47040a;
+}
+body.dark-theme .correctAnswer{
+    background-color: #10461c;
+}
+
+body.dark-theme .contentSection p {
+    color: white !important;
+}
+body.dark-theme .servicesCards .card {
+background-color: #2a2b2e;
+}
+
+body.dark-theme .flip-card-front {
+    background-color: #2a2b2e;
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styleٍSign.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="/styles/nav-footer.css">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <!-- <nav>
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav> -->
+
+
+
+    <section id="navbarSection">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/images/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/pages\home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/../pages\about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages\contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages\login.html">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</section>
+
+    
+    <div class="login">
+        <div class="firstpart">
+    
+    <div class="field">
+        <h1>Sign Up</h1>
+    <form id="registrationForm">
+        <label for="Fname">First Name:</label><br>
+        <input type="text" id="Fname" name="Fname" required>
+        <div id="FnameError" style="color: red; font-size: 10px;"></div><br>
+
+        <label for="Lname">Last Name:</label><br>
+        <input type="text" id="Lname" name="Lname" required>
+        <div id="LnameError" style="color: red; font-size: 10px;"></div><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" style="color: red; font-size: 10px;"></div><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" required>
+        <div id="phoneError" style="color: red; font-size: 10px;"></div><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required>
+        <div id="passwordError" style="color: red; font-size: 10px;"></div><br>
+
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <div id="confirmPasswordError" style="color: red; font-size: 10px;"></div><br>
+
+        <button type="submit" class="login-button">Register</button>
+    </form>
+    <a class="acc" style="position: absolute; right: 60%; " href="/pages/login.html">Have a account?</a>
+    
+</div>
+</div>
+<div class="imgs">
+    <img src="/images/ahmad2.webp" alt="">
+</div>
+</div>
+<div id="custom-alert" class="hidden">
+    <p id="alert-text"></p>
+    <button onclick="closeAlert()">Close</button>
+  </div>
+
+    <script src="/js files/SignIn.js">
+    </script>
+
+<div class="container-fluid footerContainer">
+    <footer class="pt-5 my-0">
+        <div class="footer-links">
+            <a class="footer-brand" href="#"><img src="/images/logo.png"></a>
+            <ul class="nav justify-content-center pb-3 mb-3 ">
+                <li class="nav-item"><a href="/pages\home.html" class="nav-link px-2">Home</a></li>
+                <li class="nav-item"><a href="/pages\about.html" class="nav-link px-2">About Us</a></li>
+                <li class="nav-item"><a href="/pages\contact.html" class="nav-link px-2">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <p class="text-center copyRight border-top pt-3">© 2025 Company, Inc</p>
+    </footer>
+</div>
+</body>
+</html>

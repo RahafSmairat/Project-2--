@@ -1,0 +1,92 @@
+[
+  {
+      "id": 1,
+      "title": "Choose the correct synonym for 'happy':",
+      "answer_1": "Sad",
+      "answer_2": "Joyful",
+      "answer_3": "Angry",
+      "answer_4": "Lonely",
+      "right_answer": "Joyful"
+  },
+  {
+      "id": 2,
+      "title": "Which sentence is grammatically correct?",
+      "answer_1": "She don't like apples.",
+      "answer_2": "She doesn't likes apples.",
+      "answer_3": "She doesn't like apples.",
+      "answer_4": "She don't likes apples.",
+      "right_answer": "She doesn't like apples."
+  },
+  {
+      "id": 3,
+      "title": "Choose the correct antonym for 'difficult':",
+      "answer_1": "Hard",
+      "answer_2": "Challenging",
+      "answer_3": "Easy",
+      "answer_4": "Tough",
+      "right_answer": "Easy"
+  },
+  {
+      "id": 4,
+      "title": "What is the plural form of 'child'?",
+      "answer_1": "Childs",
+      "answer_2": "Children",
+      "answer_3": "Childes",
+      "answer_4": "Childen",
+      "right_answer": "Children"
+  },
+  {
+      "id": 5,
+      "title": "Fill in the blank: She ______ to the store yesterday.",
+      "answer_1": "go",
+      "answer_2": "went",
+      "answer_3": "gone",
+      "answer_4": "going",
+      "right_answer": "went"
+  },
+  {
+      "id": 6,
+      "title": "What part of speech is the word 'quickly'?",
+      "answer_1": "Noun",
+      "answer_2": "Verb",
+      "answer_3": "Adverb",
+      "answer_4": "Adjective",
+      "right_answer": "Adverb"
+  },
+  {
+      "id": 7,
+      "title": "Choose the sentence with correct punctuation:",
+      "answer_1": "I love reading books; especially novels.",
+      "answer_2": "I love reading books especially novels.",
+      "answer_3": "I love reading books, especially novels.",
+      "answer_4": "I love reading books; especially, novels.",
+      "right_answer": "I love reading books, especially novels."
+  },
+  {
+      "id": 8,
+      "title": "Which word is spelled correctly?",
+      "answer_1": "Recieve",
+      "answer_2": "Receive",
+      "answer_3": "Recive",
+      "answer_4": "Receeve",
+      "right_answer": "Receive"
+  },
+  {
+      "id": 9,
+      "title": "What is the past tense of 'run'?",
+      "answer_1": "Ran",
+      "answer_2": "Run",
+      "answer_3": "Running",
+      "answer_4": "Runned",
+      "right_answer": "Ran"
+  },
+  {
+    "id": 10,
+    "title": "What is the past tense of 'read'?",
+    "answer_1": "readed",
+    "answer_2": "read",
+    "answer_3": "rad",
+    "answer_4": "None of the above.",
+    "right_answer": "read"
+}
+]

@@ -1,0 +1,276 @@
+body {
+  font-family: 'Arial', sans-serif;
+  /* background-color: #FFFAF6;  */
+  margin: 0;
+  padding: 0;
+  color: #4A4A4A; /* General text color */
+  background-color: #567a98c5;
+}
+
+
+body::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.4; 
+  z-index: -1; 
+}
+
+.quiz-app {
+  margin: 40px auto;
+  max-width: 800px;
+  background-color: #ffffff; /* White background for the quiz container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #122251;}
+
+.quiz-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.question-area {
+  flex: 2;
+}
+
+.answers-area {
+  flex: 3;
+}
+
+.answers-area h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answers-area .answer {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.answers-area .answer:hover {
+  background-color: #f0f8ff;
+}
+
+.answers-area .answer input[type="radio"] {
+  margin: 0;
+}
+
+.answers-area .answer label {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  background-color: #27408B;
+  color: #ffffff;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #ffffff;
+}
+
+.quiz-app {
+  margin: 40px auto;
+  max-width: 900px; /* Increased width for a larger card */
+  background-color: #ffffff;
+  padding: 40px; /* Increased padding for a spacious layout */
+  border-radius: 12px; /* Slightly more rounded */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+}
+
+.answers-area .answer {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 27px; 
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added slight shadow to each option */
+}
+
+.answers-area .answer:hover {
+  background-color: #9ecffa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #27408B; /* Pink background */
+  color: #ffffff; /* White text */
+  padding: 15px 30px; /* Increased padding for a larger button */
+  font-size: 18px; /* Larger font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 50px; /* Fully rounded edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next-button:hover {
+  background-color: #333; /* Slightly darker pink on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.next-button .arrow {
+  margin-left: 10px; /* Space between text and arrow */
+  font-size: 20px; /* Larger arrow size */
+  transition: margin-left 0.3s ease;
+}
+
+.next-button:hover .arrow {
+  margin-left: 15px; /* Arrow moves slightly on hover */
+}
+
+/* Popup Modal */
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.popup-content p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.close-popup-button {
+  background-color: #27408B;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-popup-button:hover {
+  background-color: #4A4A4A;
+}
+.timer {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  color: #222; /* Default text color */
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {box-sizing: border-box;}
+body.dark {background-color: #292c35;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+
+.checkbox-label {
+  background-color: #111; /* Dark gray background for toggle */
+  width: 50px; /* Width of the toggle */
+  height: 26px; /* Height of the toggle */
+  border-radius: 50px; /* Rounded edges */
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  transition: background 0.2s linear;
+}
+
+.checkbox-label .ball {
+  background-color: #fff; /* Ball color */
+  width: 22px; /* Ball width */
+  height: 22px; /* Ball height */
+  position: absolute;
+  left: 2px; /* Initial position (light mode) */
+  top: 2px; /* Center the ball vertically */
+  border-radius: 50%; /* Rounded ball */
+  transition: transform 0.3s ease; /* Smooth transition for movement */
+}
+
+body.dark .checkbox-label .ball {
+  transform: translateX(24px); /* Moves the ball to the right in dark mode */
+}
+
+body.dark .checkbox-label {
+  background-color: #292c35; /* Change toggle background for dark mode */
+}
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply Animation */
+.question-area, .answers-area .answer {
+  animation: fadeIn 0.5s ease-in-out;
+}
