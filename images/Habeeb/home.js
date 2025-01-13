@@ -57,7 +57,7 @@ menu.addEventListener("click", () => {
     }
 });
 // Retrieve the 'success' value from sessionStorage
-let success = sessionStorage.getItem("loggedIn-status");
+let success = sessionStorage.getItem("success");
 
 // Select the existing nav element
 let navv = document.querySelector("nav");
@@ -113,29 +113,16 @@ const typingText = document.querySelector('.typing-text');
         // Start the animation
         animateText();
 
-        // const alinks = document.querySelectorAll("#alink");
+        const alinks = document.querySelectorAll("#alink");
 
-        // alinks.forEach((alink) => {
-        //     alink.addEventListener("click", (event) => {
-        //         event.preventDefault();
-        //         const success = sessionStorage.getItem("suceess");
-        //         if (success) {
-        //             window.location.href = "../../pages/ahmad/CardsTest.html";
-        //         } else {
-        //             window.location.href = "../../pages/habeeb/login.html";
-        //         }
-        //     });
-        // });
-
-        function check(event){
-            event.preventDefault();
-                const success = sessionStorage.getItem("loggedIn-status");
+        alinks.forEach((alink) => {
+            alink.addEventListener("click", (event) => {
+                event.preventDefault();
+                const success = sessionStorage.getItem("suceess");
                 if (success) {
                     window.location.href = "../../pages/ahmad/CardsTest.html";
                 } else {
                     window.location.href = "../../pages/habeeb/login.html";
                 }
-        }
-        check(event)
-
-        
+            });
+        });

@@ -1,0 +1,85 @@
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme input {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #5a5a5a;
+}
+
+body.dark-theme .login {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-theme .login-button {
+    background-color: #333333;
+}
+
+body.dark-theme .login-button:hover {
+    background-color: #444444;
+}
+
+body.dark-theme footer {
+    background-color: #1e1e1e;
+}
+body.dark-theme label{
+    color: white;
+}
+
+body.dark-theme nav{
+    background-color: #1e1e1e;
+}
+
+body.dark-theme nav li a{
+    color: white;
+}
+
+body.dark-theme .flip-card{
+    background-color: #1e1e1e;
+}
+
+body.dark-theme #result{
+    background-color: #1e1e1e;
+}
+
+body.dark-theme .buttonsContainer{
+    background-color: #1e1e1e;
+}
+
+body.dark-theme .quiz-app{
+    background-color:#444444;
+}
+
+.theme-toggle {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px; 
+    background-color: #2F4D90; 
+    color: #FFFFFF; 
+    border: none; 
+    border-radius: 25px; 
+    padding: 10px 20px;
+    font-size: 1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000; 
+}
+
+.theme-toggle:hover {
+    background-color: #005A8D; 
+    transform: scale(1.1); 
+}
+
+.theme-toggle:active {
+    transform: scale(0.95); 
+    background-color: #003F6F; 
+}
+
+body.dark-theme #reviewContainer{
+    background-color: rgb(62, 62, 62) ;
+}

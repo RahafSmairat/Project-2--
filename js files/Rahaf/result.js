@@ -1,21 +1,56 @@
+// localStorage.setItem("score", 9);
+// const score = localStorage.getItem("score");
 
-localStorage.setItem("score", 9);
-const score = localStorage.getItem("score");
+let score = 0;
 
-sessionStorage.setItem("examType", "English");
+const currentQuiz = sessionStorage.getItem("currentQuiz");
+const urlParams = new URLSearchParams(window.location.search);
+const fileType = urlParams.get("fileType");
+const fileUrl = `../../json/Phantom/${fileType}.json`;
 
-const examType = sessionStorage.getItem("examType");
+let quizResults = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('currentQuiz')}QuizResults`));
 
-function getFile(){
-    let jsonFile;
-  if (examType == "Technical") {
-    jsonFile = "../../json/technical.json";
-  } else if (examType == "English") {
-    jsonFile = "../../json/english.json";
+console.log(quizResults);
+
+function calculateScore() {
+  return fetch(fileUrl)
+    .then((response) => response.json())
+    .then((questions) => {
+      let score = 0; // Define score here for clarity
+      for (const key in questions) {
+        if (questions[key].right_answer == quizResults[key].selectedAnswer) {
+          score += 1;
+        }
+      }
+      return score; // Return the calculated score
+    });
+}
+// function calculateScore() {
+//   fetch(fileUrl)
+//     .then((response) => response.json())
+//     .then((questions) => {
+//       console.log(questions);
+//       for (const key in questions) {
+//         if (questions[key].right_answer == quizResults[key].selectedAnswer) {
+//           score += 1;
+//         }
+//       }
+// console.log(score)
+//     });
+// }
+
+function getFile() {
+  let jsonFile;
+  if (currentQuiz == "Technical") {
+    jsonFile = "../../json/Phantom/tech.json";
+  } else if (currentQuiz == "English") {
+    jsonFile = "../../json/Phantom/en.json";
   } else {
-    jsonFile = "../../json/iq.json";
+    jsonFile = "../../json/Phantom/iq.json";
   }
-  window.location.href = `../../pages/Rahaf/review.html?examType=${encodeURIComponent(jsonFile)}`;
+  window.location.href = `../../pages/Rahaf/review.html?examType=${encodeURIComponent(
+    jsonFile
+  )}`;
 }
 
 // const reveiwAnswers = document.getElementById('reveiwAnswers');
@@ -63,32 +98,71 @@ successStyle.innerHTML = `body::after {
     background-position: center;
 }`;
 
-function showResult(score) {
-  if (score >= 5) {
-    scoreResult.innerHTML = `<h2 class="pass">${score} /10 </h2>`;
-    resultMessage.innerHTML = `<h3 class="pass">Congratulations! You've successfully passed the ${examType} Quiz!</h3>`;
-    document.head.appendChild(successStyle);
-    document.getElementById(
-      "buttonsContainer"
-    ).innerHTML += `<a href="#"><button id="downloadResult" onclick="downloadResult()">Download Result</button></a>`;
-  } else {
-    scoreResult.innerHTML = `<h2 class="fail">${score} /10 </h2>`;
-    resultMessage.innerHTML = `<h3 class="fail">Unfortunately, you did not fulfill our requirements, Good Luck!</h3>`;
-    document.head.appendChild(failStyle);
-  }
+// localStorage.setItem('technicalScore',false)
+// localStorage.setItem('englishScore',false)
+// localStorage.setItem('iqScore',false)
+
+function showResult() {
+  calculateScore().then((score) => {
+    if (currentQuiz == "Technical"){
+      // let englishScore = 0,iqScore=0, technicalScore=0;
+      localStorage.setItem('technicalTestCompleted',"true")
+      localStorage.setItem('technicalScore',score)
+    }else if(currentQuiz == "English"){
+      localStorage.setItem('englishTestCompleted',"true")
+      localStorage.setItem('englishScore',score)
+    }
+    else{
+      localStorage.setItem('iqTestCompleted',"true")
+      localStorage.setItem('iqScore',score)
+    }
+    if (score >= 5) {
+      scoreResult.innerHTML = `<h2 class="pass">${score} /10 </h2>`;
+      resultMessage.innerHTML = `<h3 class="pass">Congratulations! You've successfully passed the ${currentQuiz} Quiz!</h3>`;
+      document.head.appendChild(successStyle);
+      document.getElementById(
+        "buttonsContainer"
+      ).innerHTML += `<a href="#"><button id="downloadResult" onclick="downloadResult()">Download Result</button></a>`;
+    } else {
+      scoreResult.innerHTML = `<h2 class="fail">${score} /10 </h2>`;
+      resultMessage.innerHTML = `<h3 class="fail">Unfortunately, you did not fulfill our requirements, Good Luck!</h3>`;
+      document.head.appendChild(failStyle);
+    }
+  });
+
 }
 
-showResult(score);
+
+
+
+// function showResult(score) {
+//   if (score >= 5) {
+//     scoreResult.innerHTML = `<h2 class="pass">${score} /10 </h2>`;
+//     resultMessage.innerHTML = `<h3 class="pass">Congratulations! You've successfully passed the ${examType} Quiz!</h3>`;
+//     document.head.appendChild(successStyle);
+//     document.getElementById(
+//       "buttonsContainer"
+//     ).innerHTML += `<a href="#"><button id="downloadResult" onclick="downloadResult()">Download Result</button></a>`;
+//   } else {
+//     scoreResult.innerHTML = `<h2 class="fail">${score} /10 </h2>`;
+//     resultMessage.innerHTML = `<h3 class="fail">Unfortunately, you did not fulfill our requirements, Good Luck!</h3>`;
+//     document.head.appendChild(failStyle);
+//   }
+// }
+
+// showResult(score);
 
 ///////////
 
 function downloadResult() {
   const companylogo = "../../images/Rahaf/logo.png";
-  const userName = "Rahaf Alsmairat";
+  let loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'))
+  // console.log(loggedInUser.Fname)
+  const userName = `${loggedInUser.Fname} ${loggedInUser.Lname}`;
   const pdfContent = `
       <div class="pdfResult">
         <img src="${companylogo}">
-        <h1>${examType} Test Results</h1>
+        <h1>${currentQuiz} Test Results</h1>
         <p>This is to certify that</p>
         <h3>${userName}</h3>
         <p>Has successfully completed the assessment and demonstrated excellent skills and knowledge in the areas tested.</p>
@@ -100,7 +174,7 @@ function downloadResult() {
 
   const options = {
     margin: 0,
-    filename: `${examType}-Test-Result.pdf`,
+    filename: `${currentQuiz}-Test-Result.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: "cm", format: "a4", orientation: "landscape" },
@@ -110,5 +184,13 @@ function downloadResult() {
 }
 
 document.getElementById("backToQuizzes").addEventListener("click", function () {
-  sessionStorage.setItem("examType", "");
+  sessionStorage.setItem("currentQuiz", "");
 });
+
+function showReview(){
+  window.location.href = `../../pages/Rahaf/review.html?examType=${encodeURIComponent(jsonFile)}`;
+}
+
+function backToQuizzes(){
+  window.location.href = `../../pages/ahmad/CardsTest.html`;
+}

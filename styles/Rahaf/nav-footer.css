@@ -7,6 +7,14 @@
     justify-content: flex-end;
 }
 
+#homeNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #152453;
+    z-index: 1000;
+}
+
 #navbarSection {
     display: flex;
     flex-direction: column;
@@ -41,10 +49,11 @@
 
 .navbar-brand img {
     width: 100%;
+    margin-left: 40%;
 }
 
 .navbar-nav {
-    width: 40% !important;
+    width: 50% !important;
     gap: 50px !important;
 }
 
@@ -65,14 +74,14 @@
 /*-------------*/
 
 .footerContainer {
-    background-image: linear-gradient(#081334e1, #4683b463), url('/images/Rahaf/footerImg.jpg');
+    background-image: linear-gradient(#081334e1, #4683b463), url('../../images/Rahaf/footerImg.jpg');
     padding: 0 !important;
     z-index: 1000;
 }
 
 .copyRight {
     color: white !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0 !important;    
     padding-bottom: 1%;
     font-size: 0.8rem !important;
     font-family: "Open Sans", serif !important;

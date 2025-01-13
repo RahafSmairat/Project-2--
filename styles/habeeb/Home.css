@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* add font family */
-    font-family:Open Sans;
+    font-family: "Open Sans", serif;
 }
 :root{
     --first-color:#2e2e41;
@@ -230,6 +232,12 @@ ul .button a {
     transition: 1s ease;
 }
 @media screen and (max-width:1050px) {
+    nav ul li {
+        margin-left: 19px !important;
+    }
+    nav ul li a {
+        font-size: 12px !important;
+    }
     .content{
         top: 199px !important;
     }
@@ -530,4 +538,36 @@ footer {
 }
 .img123{
     cursor: pointer;
+}
+.typing-container {
+    display: inline-block;
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid orange; /* Cursor */
+    letter-spacing: 0.15em;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Deleting animation */
+@keyframes deleting {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+/* Cursor blinking animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+}
+#h{
+    display: none;
 }

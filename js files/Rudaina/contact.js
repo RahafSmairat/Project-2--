@@ -1,8 +1,9 @@
-emailjs.init("BN3zlAEaOw-W_DVIi");  
+// Initialize EmailJS with your user ID
+emailjs.init("BN3zlAEaOw-W_DVIi");  // تأكد من وضع الـ user ID الصحيح
 
-
+// Handle form submission
 document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault(); 
+    e.preventDefault(); // Prevent page refresh
 
     // Get form data
     let name = document.getElementById("name").value;
