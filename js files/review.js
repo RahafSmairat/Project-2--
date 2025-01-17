@@ -47,55 +47,43 @@ function backToQuizzes() {
   window.location.href = `/pages/CardsTest.html`;
 }
 
-function updateLoginStatus() {
-  const loggedInUser = sessionStorage.getItem('loggedIn-status'); 
-  const loginLogoutLink = document.getElementById('login-logout');
+const loggedInUser = sessionStorage.getItem('loggedIn-status');
+const loginLogoutLink = document.getElementById('login-logout');
+const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
+const profileImageElement = document.getElementById('profile-image');
+
+if (loggedInUser) {
+
+  const profile_icon = document.getElementById("profile-icon");
+  if (profile_icon) {
+    profile_icon.style.visibility = "visible";
+  }
+
+
   const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
-  const profileImageElement = document.getElementById('profile-image');
-
-  if (loggedInUser) {
-      
-      const profile_icon = document.getElementById("profile-icon");
-      if (profile_icon) {
-          profile_icon.style.visibility = "visible"; 
-      }
-      let sign_up_link=document.getElementById("sign-up-link");
-      sign_up_link.style.visibility="hidden";
-
-      let loginLogoutLink=document.getElementById("loginLogoutLink");
-
-      loginLogoutLink.textContent = 'Logout';
-      
-      const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
 
   const profileImageElement = document.getElementById('profile-image');
 
-  
+
   if (user.profileImage) {
-      profileImageElement.src = user.profileImage; 
+    console.log("hello")
+    profileImageElement.src = user.profileImage;
   } else {
-     
-      profileImageElement.src = '/images/avatar.jpg';
-  }
-  // 
 
-      loginLogoutLink.onclick = function () {
-          sessionStorage.removeItem('loggedIn-status'); 
-          updateLoginStatus(); 
-         
-      };
-  } else {
-      
-      const profile_icon = document.getElementById("profile-icon");
-      if (profile_icon) {
-          profile_icon.style.visibility = "hidden"; 
-      }
-let loginLogoutLink=document.getElementById("loginLogoutLink");
-      loginLogoutLink.textContent = 'Login';
-      loginLogoutLink.onclick = function () {
-          window.location.href = 'login.html'; 
-      };
+    profileImageElement.src = '/images/avatar.jpg';
   }
+
+} else {
+
+  const profile_icon = document.getElementById("profile-icon");
+  if (profile_icon) {
+    profile_icon.style.visibility = "hidden";
+  }
+  let loginLogoutLink = document.getElementById("loginLogoutLink");
+  loginLogoutLink.textContent = 'Login';
+  loginLogoutLink.onclick = function () {
+    window.location.href = 'login.html';
+  };
 }
 
 

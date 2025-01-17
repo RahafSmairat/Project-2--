@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-*{
-  font-family: "Open Sans", serif !important;
-}
 body {
   margin: 0;
     padding: 0;
@@ -53,6 +50,7 @@ body {
     padding: 30px;
     border: 1px solid #ddd;
     transition: all 0.3s ease;
+    font-family: "Open Sans", serif !important;
   }
   
   .profile-container:hover {
@@ -306,14 +304,15 @@ body {
     }
   }
   @media (max-width: 426px) {
-    .navbar{
-      background-color: rgb(39, 64, 139) !important;
-  }
+
   .email-container , .name-fields , .name-section{
     display: block;
   }
   .change-image{
     padding:12px ;
   }
+  .navbar-brand img{
+    margin-left: 0 !important;
+}
   
   }

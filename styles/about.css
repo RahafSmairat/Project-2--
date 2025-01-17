@@ -246,4 +246,8 @@ p {
         .whyUsCards .flip-card{
             width: 100%;
         }
+
+        .navbar-brand img{
+            margin-left: 0 !important;
+        }
 }

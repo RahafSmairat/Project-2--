@@ -140,7 +140,7 @@ body::before {
 }
 
 .next-button:hover {
-  background-color: #333; /* Slightly darker pink on hover */
+  background-color: #4682B4; /* Slightly darker pink on hover */
   transform: translateY(-3px); /* Lift effect on hover */
 }
 

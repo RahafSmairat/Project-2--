@@ -4,8 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", serif !important;
 }
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    font-family: "Open Sans", serif;
+  }
 body::before {
     content: ''; 
     position: absolute;
@@ -29,25 +34,25 @@ body::before {
     --text-shadow : 0 5px 25px rgb(2,2,2,0.1);
     --text-color : #fff;
 }
-body {
-    margin: 0;
-    font-family: "Open Sans", serif;
-    position: relative;
-    /* min-height: 100vh; */
-  }
+
+
+
 .main-container{
     position: relative;
     margin: 10% 25% 0 25%;
     transition: 0.5 ease;
 }
-nav {
+
+.navbar-nav{
+    justify-content: flex-end;
+}
+/* nav {
     width: 100%;
     background-color: #152453;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: fixed; */
     top: 0;
     left: 0;
     z-index: 1000;
@@ -79,7 +84,7 @@ nav ul li a {
 
 nav ul li a{
     color: white;
-}
+} */
 .button {
     padding: 2px 20px;
     background-color: #005B99;
@@ -93,18 +98,43 @@ nav ul li a{
     height: 23px;
 }
 
+.carousel-item img{
+    height: 100vh;
+    filter: brightness(35%);
+}
+
+.carousel-caption{
+    bottom: 2rem !important;
+    left: 0 !important;
+    width: 80% !important;
+    padding: 3% 0 3% 5% !important;
+    text-align: left !important;
+    background: linear-gradient(#081334e1, #4683b463);
+}
+.carousel-caption h2{
+    font-family: "Montserrat", serif !important;
+    font-size: 3rem !important;
+    font-weight: bolder;
+    /* text-shadow: 0px 0px 3px #ffffff; */
+}
+.carousel-caption p{
+    width: 90% !important;
+}
 .button1{
     background-color:#18155c;
     color: white;
     border-radius: 5px;
     padding: 10px 20px;
     outline: 0;
-    border: 0;
+    border: none;
     cursor: pointer;
     transition:  all 0.5s;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 .button1:hover{
-    background-color: #000;
+    background-color: #4682B4;
     color: white;
     border: 1px solid white;
     transform: scale(1.05);
@@ -150,7 +180,8 @@ ul .button a {
 .tab-menu{
     color: var(--text-color);
     list-style: none;
-    background: var(--third-color);
+    /* background: var(--third-color); */
+    background-color: #152453;
     max-width: 800px;
     padding: 10px;
     white-space:nowrap;
@@ -169,6 +200,7 @@ ul .button a {
     cursor: pointer;
     /* user-select: none; */
     transition: 0.3s ease;
+    font-family: "Open Sans", serif !important;
 }
 .tab-nav{
     position: relative;
@@ -179,25 +211,31 @@ ul .button a {
     margin: 0 auto;
 }
 .tab-btn:hover{
-    background: var(--first-color);
+    background: #72aee0 ;
 }
 .tab-btn.active{
-    background: var(--secound-color);
+    background: #4682B4;
 }
 .tab-content{
     position: relative;
+    top: -50px;
+    z-index: -1;
     display: flex;
     justify-content: center;
-    width: 100%;
+    justify-self: center;
+    padding-top: 2%;
+    /* padding-bottom: 2%; */
+    width: 90%;
+    margin-bottom: 10%;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #122251;
+    border: none !important;
+    border-radius: 250px;
 }
+
 .tab{
-    position: absolute;
-    top: 0;
-    right: auto;
-    bottom: 0;
-    left: aut;
     max-width: 1100px;
-    padding: 15px 50px;
+    /* padding: 15px 50px; */
     transform: translateX(25px);
     content-visibility: hidden;
     opacity: 0;
@@ -206,7 +244,7 @@ ul .button a {
     position: relative;
     width: 450px;
     max-width: 450px;
-    border-radius: 20px;
+    border-radius: 50px;
     overflow: hidden;
     display: flex;
     /* justify-content: center;
@@ -216,17 +254,26 @@ ul .button a {
 .tab .img-card img{
     width: 100%;
 }
+
 .tab .row{
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: 50px 0;
     gap: 30px;
 }
-.right-column{
-    max-width: 800px;
+
+.row{
+    flex-wrap: nowrap !important;
 }
+
+.left-column, .right-column{
+    width: unset !important;
+}
+.right-column{
+    max-width: 50% !important;
+}
+
 
 .info .about , .info .desc{
     color: var(--text-color);
@@ -238,7 +285,6 @@ ul .button a {
 }
 .service{
     color: var(--text-color);
-    font-size: 3em;
     font-weight: 700;
     text-align: center;
 }
@@ -293,7 +339,7 @@ ul .button a {
         font-size: 0.7em !important;
         width: 450px !important;
     }
-    .footer-logo ul {
+    /* .footer-logo ul {
         list-style: none;
         padding: 0;
         display: flex;
@@ -303,25 +349,23 @@ ul .button a {
         background-color: #27408B;
         color: white;
         padding: 20px 0px 20px 0px;
-        /* display: flex; */
-        /* flex-wrap: wrap; */
         position: absolute;
         bottom: -2321px !important;
         width: 100%;
-    }
+    } */
     .logoo{
         width: 82px !important;
         height: 46px !important;
         margin-top: 10px;
     }
-    .footer-logo ul{
+    /* .footer-logo ul{
         gap: 20px !important;
     }
     .footer-logo ul li a {
         color: white;
         text-decoration: none;
         font-size: 14px !important;
-    }
+    } */
     #sso{
         margin-left: 118px !important;
     }
@@ -368,6 +412,7 @@ overflow: hidden;
 perspective: 1000px;/*what is that */
 box-shadow: 0 0 0 5px #ffffff;
 transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+border: none !important;
 }
 
 .card svg {
@@ -401,7 +446,7 @@ width: 100%;
 height: 100%;
 padding: 20px;
 box-sizing: border-box;
-background-image:linear-gradient(to top, #2e2e41, #005B99);
+background-image:linear-gradient(#081334, #4683b4);
 transform: rotateX(-90deg);
 transform-origin: bottom;
 transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -446,19 +491,15 @@ line-height: 1.4;
         width: 100%;
     }
 }
-footer {
+/* footer {
     background-color: #27408B;
     color: white;
     padding: 20px 0px 20px 0px;
-    /* display: flex;    */
-    /* flex-wrap: wrap; */
     position: absolute;
-    /* bottom: -1250px; */
     bottom: -800px;
     width: 100%;
-}
-.footer-logo {
-    /* flex: 1; */
+} */
+/* .footer-logo {
     width: 100%;
     padding-left: 20px;
     display: flex;
@@ -491,7 +532,11 @@ footer {
 }
 .footer-logo ul li a:hover {
     color: #FF4081;
-}
+} */
+ #footerContainer{
+    position: fixed;
+    bottom: 0;
+ }
 .desc ul{
     margin: 10px 0 10px 35px;
 }
@@ -553,6 +598,13 @@ footer {
     display: flex;
     gap: 20px;
 }
+.info ul{
+    list-style-image: url('/images/diamond.png');
+}
+.info ul li{
+    padding: 10px !important;
+}
+
 #menu{
     display: none;
 }

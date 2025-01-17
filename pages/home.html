@@ -1,72 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&family=Playwrite+VN+Guides&family=Yuji+Mai&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/Home.css">
-<link rel="stylesheet" href="/styles/dark.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&family=Playwrite+VN+Guides&family=Yuji+Mai&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/Home.css">
+    <link rel="stylesheet" href="/styles/nav-footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX+Guides&family=Playwrite+VN+Guides&family=Yuji+Mai&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/Home.css">
-</head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src="/images/logo.png" width="120" height="50" alt="Logo">
-        </div>
-        <ul id="ulfor">
-            <li id="1"><a href="#">Home</a></li>
-            <li id="1"><a href="/pages/about.html">About</a></li>
-            <li id="1"><a href="#">Contact</a></li>
-            <li style="color: white;"> <a href="/pages/login.html" id="loginLogoutLink"> Sign-in</a></li>
-            <li  style="color: white;"> <a href="/pages/SignIn.html" id="sign-up-link"> Sign-up</a></li>
-            <!--Profile Image-->
-            <li style="display: inline-block; margin-left: 10px; visibility: hidden; " id="profile-icon" >
-                <a href="/pages\profile.html" style="display: inline-block; width: 40px; height: 40px; overflow: hidden; border-radius: 50%;">
-                    <img id="profile-image" src="/images/avatar.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                </a>
-            </li>
-        </ul>
-        <img src="/images/menu_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.png" width="30" height="30" alt="" id="img123">
-    </nav>
-    <div class="hero">
-        <video autoplay muted loop >
-            <source src="/images/6037152_Businesswoman_Businessman_3840x2160.mp4" type="video/mp4">
-        </video>
-        <div class="content">
-            <h3><div class="typing-container">
-                <span class="typing-text"></span>
-            </div><br>with ElevateTech</h3>
-            <a href="/pages/about.html"><button class="button1">Explore More</button></a>
+    <section id="header" >
+    <nav class="navbar navbar-expand-lg sticky-top" id="navbar" style="background-color: #152453;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/images/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="bi bi-list" style="color: white !important;"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/pages\home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages\about.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages\contact.html">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages\login.html" id="loginLogoutLink">Log In</a>
+                        </li>
+
+                    </ul>
+                    <!-- صورة البروفايل -->
+                    <li style="display: inline-block; visibility: hidden; margin-top: 10px;" id="profile-icon">
+                        <a href="/pages\contact.html"
+                            style="display: inline-block; width: 40px; height: 40px; overflow: hidden; border-radius: 50%;">
+                            <img src="/images/avatar.jpg" style="width: 100%; height: 100%; object-fit: cover;"
+                                id="profile-image">
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="/images/sliderImg1.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2><span style="color: #4682B4;">Simplify</span> Recruitment with Smart Testing</h2>
+                    <p>Identify the best candidates effortlessly with ElevateTech's innovative assessment solutions.</p>
+                  </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/images/sliderImg2.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2><span style="color: #4682B4;">Elevate</span> Your Hiring Game</h2>
+                    <p>Our cutting-edge testing tools ensure precision and efficiency in every step of your hiring process.</p>
+                  </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/images/sliderImg3.jpeg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2><span style="color: #4682B4;">Empowering</span> Companies to Hire Top Talent</h2>
+                    <p>Streamline candidate filtering with our technology-driven testing system designed to match the perfect fit.</p>
+                  </div>
+            </div>
         </div>
     </div>
-    <div id="mo"></div>
+    
+
     <div class="typewrite">
-        <h1 class="service" style="color: #27408B;margin: 10% 0 5% 0;">Positions Available now</h1>
+        <h2 class="service" style="color: #27408B;margin: 10% 0 5% 0;">Positions Available Now</h2>
     </div>
+
     <div class="Pos-card">
         <div class="position1" id="po">
             <div class="card">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg2"></svg>
                 <div class="card__content">
                     <p class="card__title">Quality Assurance</p>
-                    <p class="card__description">Ensure excellence with us as a Quality Assurance Engineer—test, refine, and deliver flawless software solutions that exceed user expectations. Join our team now!</p>
-                    <a href="" id="alink" style="margin: 10px 0 10px 125px;"><button class="button1" style="margin: 20px 0px 0px 10px;" onclick="check(event)">Apply now</button></a>
+                    <p class="card__description">Ensure excellence with us as a Quality Assurance Engineer—test, refine,
+                        and deliver flawless software solutions that exceed user expectations. Join our team now!</p>
+                    <a href="" id="alink" style="margin: 10px 0 10px 125px;"><button class="button1"
+                            style="margin: 20px 0px 0px 10px;" onclick="check(event)">Apply now</button></a>
                 </div>
             </div>
         </div>
@@ -75,8 +104,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg1"></svg>
                 <div class="card__content">
                     <p class="card__title">Web Developer</p>
-                    <p class="card__description">Elevate your career in web development with us—design, build, and optimize cutting-edge websites and applications that redefine user experiences. Apply today!</p>
-                    <a href="" id="alink" style="margin: 20px 0px 0px 125px;"><button class="button1" style="margin: 20px 0px 0px 10px;" onclick="check(event)">Applay now</button></a>
+                    <p class="card__description">Elevate your career in web development with us—design, build, and
+                        optimize cutting-edge websites and applications that redefine user experiences. Apply today!</p>
+                    <a href="" id="alink" style="margin: 20px 0px 0px 125px;"><button class="button1"
+                            style="margin: 20px 0px 0px 10px;" onclick="check(event)">Applay now</button></a>
                 </div>
             </div>
         </div>
@@ -84,9 +115,11 @@
             <div class="card">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg3"></svg>
                 <div class="card__content">
-                    <p class="card__title">software Enginering</p>
-                    <p class="card__description">Join our team as a Software Engineer and test your skills in building innovative solutions that drive real-world impact—apply now to shape the future with us!</p>
-                    <a href="" id="alink" style="margin: 10px 30px 0px 125px;"><button class="button1" style="margin: 20px 30px 0px 10px;" onclick="check(event)">Apply Now</button></a>
+                    <p class="card__title">Software Enginering</p>
+                    <p class="card__description">Join our team as a Software Engineer and test your skills in building
+                        innovative solutions that drive real-world impact—apply now to shape the future with us!</p>
+                    <a href="" id="alink" style="margin: 10px 30px 0px 125px;"><button class="button1"
+                            style="margin: 20px 0px 0px 10px;" onclick="check(event)">Apply Now</button></a>
                 </div>
             </div>
         </div>
@@ -104,22 +137,31 @@
     <div class="tab-content">
         <div class="tab active">
             <div class="row">
-                <div class="left-column">   
+                <div class="left-column">
                     <div class="img-card">
                         <img src="/images/a.jpeg" alt="">
                     </div>
                 </div>
                 <div class="right-column">
                     <div class="info">
-                        <h2 class="about" style="color: #27408B">About Us</h2>
+                        <!-- <h2 class="about" style="color: #27408B">About Us</h2> -->
                         <div class="desc">
-                            <p style="color: #27408B"><strong>ElevateTech</strong> is a leading innovator in the recruitment industry, dedicated to transforming the way job seekers and employers connect. Our platform is designed to streamline the hiring process, making it faster, smarter, and more efficient for everyone involved.</p>
+                            <p style="color: #4A4A4A"><strong>ElevateTech</strong> is a leading innovator in the
+                                recruitment industry, dedicated to transforming the way job seekers and employers
+                                connect. Our platform is designed to streamline the hiring process, making it faster,
+                                smarter, and more efficient for everyone involved.</p>
                             <ul>
-                                <li style="color: #27408B"><strong>Comprehensive Job Listings:</strong> Explore a vast array of opportunities across diverse industries, tailored to your skills and aspirations.</li>
-                                <li style="color: #27408B"><strong>Skill-Based Assessments:</strong> Our interactive quizzes and evaluations ensure that candidates are matched with roles that align with their expertise.</li>
-                                <li style="color: #27408B"><strong>Trusted by Employers:</strong> We provide reliable tools for companies to identify top talent, ensuring a perfect fit for their teams.</li>                    
-                            </ul>                            
-                            <a href="#mo"><button class="button1" id="sso">Explore More</button></a>
+                                <li style="color: #4A4A4A"><strong>Comprehensive Job Listings:</strong> Explore a vast
+                                    array of opportunities across diverse industries, tailored to your skills and
+                                    aspirations.</li>
+                                <li style="color: #4A4A4A"><strong>Skill-Based Assessments:</strong> Our interactive
+                                    quizzes and evaluations ensure that candidates are matched with roles that align
+                                    with their expertise.</li>
+                                <li style="color: #4A4A4A"><strong>Trusted by Employers:</strong> We provide reliable
+                                    tools for companies to identify top talent, ensuring a perfect fit for their teams.
+                                </li>
+                            </ul>
+                            <!-- <a href="#mo"><button class="button1" id="sso">Explore More</button></a> -->
                         </div>
                     </div>
                 </div>
@@ -134,18 +176,23 @@
                 </div>
                 <div class="right-column">
                     <div class="info">
-                        <h2 class="about" style="color: #27408B">Service</h2>
+                        <!-- <h2 class="about" style="color: #27408B">Service</h2> -->
                         <div class="desc">
-                            <p style="color: #27408B"><strong>ElevateTech</strong> is a self-contained recruitment platform where job seekers can explore opportunities, take skill-based quizzes, and apply for jobs—all without the need for in-person meetings. Our streamlined process ensures efficiency and convenience for both candidates and employers.</p>
-        
-                            <h3>How It Works</h3>
+                            <p style="color: #4A4A4A"><strong>ElevateTech</strong> is a self-contained recruitment
+                                platform where job seekers can explore opportunities, take skill-based quizzes, and
+                                apply for jobs—all without the need for in-person meetings. Our streamlined process
+                                ensures efficiency and convenience for both candidates and employers.</p>
                             <ul>
-                                <li style="color: #27408B"><strong>Explore Opportunities:</strong> Browse job listings tailored to your skills and interests.</li>
-                                <li style="color: #27408B"><strong>Take Quizzes:</strong> Complete interactive assessments to demonstrate your expertise.</li>
-                                <li style="color: #27408B"><strong>Apply Directly:</strong> Submit your application seamlessly through our platform.</li>
+                                <li style="color: #4A4A4A"><strong>Explore Opportunities:</strong> Browse job listings
+                                    tailored to your skills and interests.</li>
+                                <li style="color: #4A4A4A"><strong>Take Quizzes:</strong> Complete interactive
+                                    assessments to demonstrate your expertise.</li>
+                                <li style="color: #4A4A4A"><strong>Apply Directly:</strong> Submit your application
+                                    seamlessly through our platform.</li>
                             </ul>
-                    
-                            <p style="color: #27408B">Join <strong>ElevateTech</strong> today and experience a modern, hassle-free approach to recruitment.</p>
+
+                            <p style="color: #4A4A4A">Join <strong>ElevateTech</strong> today and experience a modern,
+                                hassle-free approach to recruitment.</p>
                         </div>
                     </div>
                 </div>
@@ -160,19 +207,22 @@
                 </div>
                 <div class="right-column">
                     <div class="info">
-                        <h2 class="about" style="color: #27408B">Why Us</h2>
+                        <!-- <h2 class="about" style="color: #27408B">Why Us</h2> -->
                         <div class="desc">
-                            <p style="color: #27408B">At <strong>ElevateTech</strong>, we stand out by offering a seamless, innovative, and efficient recruitment experience. Here’s why we’re the best choice for both job seekers and employers:</p>
-        
+                            <p style="color: #4A4A4A">At <strong>ElevateTech</strong>, we stand out by offering a
+                                seamless, innovative, and efficient recruitment experience. Here’s why we’re the best
+                                choice for both job seekers and employers:</p>
                             <ul>
-                                <li style="color: #27408B"><strong>Hassle-Free Process:</strong> Apply for jobs or hire talent without the need for in-person meetings—everything is done online.</li>
-                                <li style="color: #27408B"><strong>Skill-Based Assessments:</strong> Our interactive quizzes ensure that candidates are evaluated fairly and accurately.</li>
-                                <li style="color: #27408B"><strong>Efficiency and Speed:</strong> Streamlined processes save time for both job seekers and employers.</li>
-                                <li style="color: #27408B"><strong>Innovative Technology:</strong> We leverage cutting-edge tools to simplify recruitment and deliver results.</li>
-                                <li style="color: #27408B"><strong>Trusted by Many:</strong> Join a growing community of successful job seekers and satisfied employers.</li>
+                                <li style="color: #4A4A4A"><strong>Hassle-Free Process:</strong> Apply for jobs or hire
+                                    talent without the need for in-person meetings—everything is done online.</li>
+                                <li style="color: #4A4A4A"><strong>Skill-Based Assessments:</strong> Our interactive
+                                    quizzes ensure that candidates are evaluated fairly and accurately.</li>
+                                <li style="color: #4A4A4A"><strong>Efficiency and Speed:</strong> Streamlined processes
+                                    save time for both job seekers and employers.</li>
                             </ul>
-                    
-                            <p style="color: #27408B">Choose <strong>ElevateTech</strong> for a modern, reliable, and effective recruitment solution.</p>
+
+                            <p style="color: #4A4A4A">Choose <strong>ElevateTech</strong> for a modern, reliable, and
+                                effective recruitment solution.</p>
                         </div>
                     </div>
                 </div>
@@ -180,25 +230,27 @@
         </div>
         <div class="tab">
             <div class="row">
-                <div class="right-column">
+                <div>
                     <div class="infos">
                         <div class="reflection-card">
                             <!-- Customer Photo -->
-                            <img src="/images/profile/4d010208-536a-458b-ad6e-6ea88858beb5.jpg" alt="Customer Photo" class="customer-photo">
-                    
+                            <img src="/images/profile/4d010208-536a-458b-ad6e-6ea88858beb5.jpg" alt="Customer Photo"
+                                class="customer-photo">
+
                             <!-- Customer Name -->
                             <div class="customer-name">William</div>
-                    
+
                             <!-- Customer Description -->
                             <div class="customer-description">
-                                "ElevateTech has made job hunting so much easier! The skill-based quizzes are a great way to showcase my abilities"
+                                "ElevateTech has made job hunting so much easier! The skill-based quizzes are a great
+                                way to showcase my abilities"
                             </div>
-                    
+
                             <!-- Rating (Optional) -->
                             <div class="customer-rating" style="margin-top: 65px;">
                                 ★★★★★
                             </div>
-                    
+
                             <!-- Footer Text (Optional) -->
                             <div class="card-footer">
                                 Reviewed on October 2023
@@ -206,21 +258,23 @@
                         </div>
                         <div class="reflection-card">
                             <!-- Customer Photo -->
-                            <img src="/images/profile/Corporate Example.jpg" alt="Customer Photo" class="customer-photo">
-                    
+                            <img src="/images/profile/Corporate Example.jpg" alt="Customer Photo"
+                                class="customer-photo">
+
                             <!-- Customer Name -->
                             <div class="customer-name">James</div>
-                    
+
                             <!-- Customer Description -->
                             <div class="customer-description">
-                                "ElevateTech has completely simplified the job search process for me! The skill-based quizzes are an excellent way to highlight my strengths."
+                                "ElevateTech has completely simplified the job search process for me! The skill-based
+                                quizzes are an excellent way to highlight my strengths."
                             </div>
-                    
+
                             <!-- Rating (Optional) -->
                             <div class="customer-rating">
                                 ★★★★★
                             </div>
-                    
+
                             <!-- Footer Text (Optional) -->
                             <div class="card-footer">
                                 Reviewed on October 2023
@@ -228,105 +282,123 @@
                         </div>
                         <div class="reflection-card">
                             <!-- Customer Photo -->
-                            <img src="/images/profile/Handsome Mid-adult Businessman Working In The Corporate Office Photo _ JPG Free Download - Pikbest.jpg" style="background-repeat: no-repeat;background-position-y: 10px;" alt="Customer Photo" class="customer-photo">
-                    
+                            <img src="/images/profile/Handsome Mid-adult Businessman Working In The Corporate Office Photo _ JPG Free Download - Pikbest.jpg"
+                                style="background-repeat: no-repeat;background-position-y: 10px;" alt="Customer Photo"
+                                class="customer-photo">
+
                             <!-- Customer Name -->
                             <div class="customer-name">John Doe</div>
-                    
+
                             <!-- Customer Description -->
                             <div class="customer-description">
-                                "ElevateTech has revolutionized the way I approach job applications! The skill-based quizzes are a fantastic way to demonstrate my expertise."
+                                "ElevateTech has revolutionized the way I approach job applications! The skill-based
+                                quizzes are a fantastic way to demonstrate my expertise."
                             </div>
-                    
+
                             <!-- Rating (Optional) -->
                             <div class="customer-rating">
                                 ★★★★<span style="color: gray;">★</span>
                             </div>
-                    
+
                             <!-- Footer Text (Optional) -->
                             <div class="card-footer">
                                 Reviewed on October 2023
                             </div>
-                        </div>                    
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-logo">
-            <img src="/images/logo.png" width="300" height="300" alt="Logo" class="logoo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <hr style="width: 100%;"><br>
-        <p class="text-center" style="text-align: center;">© 2025 Company, Inc</p>
-    </footer>
-    <button id="themeToggle" class="theme-toggle">Dark Theme</button>
-    <script src="/js files/dark.js"></script>
+    <div class="container-fluid footerContainer">
+        <footer class="pt-5 my-0">
+            <div class="footer-links">
+                <a class="footer-brand" href="#"><img src="/images/logo.png"></a>
+                <ul class="nav justify-content-center pb-3 mb-3 ">
+                    <li class="nav-item"><a href="/pages\home.html" class="nav-link px-2">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2">About Us</a></li>
+                    <li class="nav-item"><a href="/pages\contact.html" class="nav-link px-2">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <p class="text-center copyRight border-top pt-3">© 2025 Company, Inc</p>
+        </footer>
+    </div>
+    <!-- <button id="themeToggle" class="theme-toggle">Dark Theme</button> -->
+
     <script>
-     
-       
         function updateLoginStatus() {
-        const loggedInUser = sessionStorage.getItem('loggedIn-status'); 
-        const loginLogoutLink = document.getElementById('login-logout');
-        const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
-        const profileImageElement = document.getElementById('profile-image');
-    
-        if (loggedInUser) {
-            
-            const profile_icon = document.getElementById("profile-icon");
-            if (profile_icon) {
-                profile_icon.style.visibility = "visible"; 
-            }
-            let sign_up_link=document.getElementById("sign-up-link");
-            sign_up_link.style.visibility="hidden";
-    
-            let loginLogoutLink=document.getElementById("loginLogoutLink");
-    
-            loginLogoutLink.textContent = 'Logout';
-            
+            const loggedInUser = sessionStorage.getItem('loggedIn-status');
+            const loginLogoutLink = document.getElementById('login-logout');
             const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
-    
-        const profileImageElement = document.getElementById('profile-image');
-    
-        
-        if (user.profileImage) {
-            profileImageElement.src = user.profileImage; 
-        } else {
-           
-            profileImageElement.src = '/images/avatar.jpg';
-        }
-        // 
-    
-            loginLogoutLink.onclick = function () {
-                sessionStorage.removeItem('loggedIn-status'); 
-                // alert('Logged out successfully!');
-                updateLoginStatus(); 
-               
-            };
-        } else {
-            
-            const profile_icon = document.getElementById("profile-icon");
-            if (profile_icon) {
-                profile_icon.style.visibility = "hidden"; 
+            const profileImageElement = document.getElementById('profile-image');
+
+            if (loggedInUser) {
+
+                const profile_icon = document.getElementById("profile-icon");
+                if (profile_icon) {
+                    profile_icon.style.visibility = "visible";
+                    profile_icon.style.marginLeft = "20px";
+                }
+                let sign_up_link = document.getElementById("sign-up-link");
+
+
+                let loginLogoutLink = document.getElementById("loginLogoutLink");
+
+                loginLogoutLink.textContent = 'Logout';
+
+                const user = JSON.parse(sessionStorage.getItem('loggedInUser')) || {};
+
+                const profileImageElement = document.getElementById('profile-image');
+
+
+                if (user.profileImage) {
+                    profileImageElement.src = user.profileImage;
+                } else {
+
+                    profileImageElement.src = '/images/avatar.jpg';
+                }
+
+
+
+
+
+                // 
+
+                loginLogoutLink.onclick = function () {
+                    sessionStorage.removeItem('loggedIn-status');
+                    alert('Logged out successfully!');
+                    updateLoginStatus();
+
+                };
+            } else {
+
+                const profile_icon = document.getElementById("profile-icon");
+                if (profile_icon) {
+                    profile_icon.style.visibility = "hidden";
+                    profile_icon.style.marginLeft = "20px";
+                }
+                let loginLogoutLink = document.getElementById("loginLogoutLink");
+                loginLogoutLink.textContent = 'Login';
+                loginLogoutLink.onclick = function () {
+                    window.location.href = 'login.html';
+                };
             }
-    let loginLogoutLink=document.getElementById("loginLogoutLink");
-            loginLogoutLink.textContent = 'Login';
-            loginLogoutLink.onclick = function () {
-                window.location.href = 'login.html'; 
-            };
         }
-    }
-    
-    
-    window.onload = updateLoginStatus;
-     </script>
+
+
+        window.onload = updateLoginStatus;
+
+    </script>
     <script src="/js files/home.js"></script>
     <script src="/js files/login.js"></script>
+    <script src="/js files/about.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="/js files/dark.js"></script>
+
 </body>
+
 </html>

@@ -24,7 +24,7 @@ body::before {
   z-index: -1; 
 }
 
-button{
+#testTech, #showTechnical, #testEnglish, #showEnglish, #testIQ, #showIQ{
   width: 170px;
   height: 50px;
   border-radius: 10px;
@@ -35,7 +35,7 @@ button{
   box-shadow: 0 0 3px #27408B;
 }
 
-button:hover{
+#testTech:hover, #showTechnical:hover, #testEnglish:hover, #showEnglish:hover, #testIQ:hover, #showIQ:hover{
   background-color:#4682B4 !important;
 }
 
@@ -160,7 +160,7 @@ nav ul li a:hover {
   gap: 150px;
   padding: 20px;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 15%;
   height: 230px;
 }
 
@@ -175,8 +175,13 @@ nav ul li a:hover {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width:30%;
+  align-items: center !important;
 }
 
+.card img{
+  width: 50%;
+  margin-bottom: 20px;
+}
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -267,13 +272,6 @@ footer p {
   margin: 0; /* Remove default margin */
   color: #ccc; /* Light gray color */
 }
-
-
-.navbar-toggler{
-  background-color: #005B99 !important;
-}
-
-
 
 #custom-alert {
   position: fixed;
@@ -391,10 +389,16 @@ footer p {
     gap: 20px;
     padding: 20px;
     margin-top: 20px;
-
+margin-bottom: 230%;
   }
 
+.navbar-nav{
+  gap: 0;
+}
 
+.navbar-brand img{
+  margin-left: 0 !important;
+}
 
 .footer-links {
   list-style: none;

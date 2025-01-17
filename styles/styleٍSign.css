@@ -285,6 +285,10 @@ label {
         right: 0;
     } */
 
+    .navbar-brand img{
+        margin-left: 0 !important;
+    }
+
     #custom-alert button {
         background-color: #5A9ACF;
         color: #FFFFFF;

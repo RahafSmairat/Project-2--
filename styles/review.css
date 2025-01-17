@@ -79,10 +79,10 @@ ol {
     margin-bottom: 10px
 }
 
-.option:hover {
+/* .option:hover {
     background-color: #f0f8ff;
     cursor: pointer;
-}
+} */
 
 #backToQuizzes{
     width: 150px;
@@ -108,7 +108,7 @@ ol {
 .question-block {
     margin-bottom: 30px; 
     padding-bottom: 15px;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
 }
 
 .progress-bar {
@@ -125,7 +125,10 @@ ol {
     width: 0; 
     transition: width 0.5s ease;
 }
-
+.navbar-nav {
+    width: 50% !important;
+    gap: 35px !important;
+}
 
 
 @media screen and (max-width: 426px) {
@@ -138,5 +141,12 @@ ol {
     li {
         font-size: .9rem;
     }
+    .navbar-nav {
+        gap: 10px !important;
+    }
+    .navbar-brand img {
+        margin-left: 0 !important;
+    }
+
 }
 
