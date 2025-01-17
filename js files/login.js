@@ -20,7 +20,7 @@ document.getElementById("showw").onclick = (event) => {
   // البحث عن تطابق بين المدخلات وأحد المستخدمين
   const user = storedUsers.find(
     (u) =>
-      (u.email === username || u.phone === username) && u.password === password
+      u.email == username && u.password == password
   );
 
   if (user) {

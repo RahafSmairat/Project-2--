@@ -136,6 +136,6 @@ const typingText = document.querySelector('.typing-text');
                     window.location.href = "/pages/login.html";
                 }
         }
-        check(event)
+        // check(event)
 
         

@@ -144,7 +144,7 @@ function showResult() {
 function downloadResult() {
   const companylogo = "/images/logo.png";
   let loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'))
-  const userName = `${loggedInUser.Fname} ${loggedInUser.Lname}`;
+  const userName = `${loggedInUser.firstName} ${loggedInUser.lastName}`;
   const pdfContent = `
       <div class="pdfResult">
         <img src="${companylogo}">

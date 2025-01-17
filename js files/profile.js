@@ -134,7 +134,7 @@ function displayMessage(message, type) {
 }
 
 function welcomeMsg(){
-    document.getElementById('userProfileName').innerHTML = `Hello ${users[0].Fname}`
+    document.getElementById('userProfileName').innerHTML = `Hello ${users[0].firstName}`
 }
 
 welcomeMsg();

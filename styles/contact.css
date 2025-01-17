@@ -7,6 +7,10 @@
     font-family: "Open Sans", serif;
 }
 
+i{
+    color: #152453 !important;
+}
+
 .contact {
     position: relative;
     min-height: 100vh;
@@ -15,7 +19,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("/images/building-1458587.jpg");
+    background-image: linear-gradient(#040b1ed1, #08133463),url("/images/building-1458587.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -100,7 +104,7 @@
 .container .contactInfo .box .text h3 {
     font-weight: 600;
     font-size: 24px;
-    color: #005B99;
+    color: #7ab8ea;
 }
 
 .container .contactInfo .box .text p {

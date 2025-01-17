@@ -172,7 +172,7 @@ h1 {
 }
 
 .login-button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #2F4D90;
     /* Titles/Headings color */
@@ -180,7 +180,7 @@ h1 {
     border: none;
     border-radius: 25px;
     width: 85%;
-    margin-left: 3.5%;
+    margin-left: 4.5%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -271,6 +271,7 @@ footer p {
 
 label {
     color: #182E55;
+    margin-top: 5px
 }
 
 @media (max-width: 426px) {
